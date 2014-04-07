@@ -1,3 +1,6 @@
+//This example has been sourced and edited from 
+// http://libk8055.sourceforge.net/
+
 #include <cstdlib>
 #include <windows.h>
 #include <iostream>
@@ -48,7 +51,7 @@ int  Channel = 8, DA1 = 0, DA2 = 0;
 
 
 int init(){
-  hDLL = LoadLibrary(L"k8055d");
+  hDLL = LoadLibrary(L"k8055d"); //L is needed to differenciate 
   if (hDLL != NULL){
 	OpenDevice              =(t_func4) GetProcAddress(hDLL, "OpenDevice");
 	if (!OpenDevice                  ){FreeLibrary(hDLL);return -2;}

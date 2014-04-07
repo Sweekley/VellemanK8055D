@@ -1,14 +1,28 @@
-//this is following the devC example 
+/*
+============================================================================
+Name        : Main.cpp
+Author      : Scott Weekley
+Version     : 0.0A
+Description : Velleman K8055D
+============================================================================
+* Enceladus Confidential
+* 2013 Enceladus Technologies
+* All Rights Reserved.
+* ___________________________________________________________________
+* NOTICE:
+* The intellectual and technical concepts contained
+* herein are proprietary to Enceladus Technologies.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Enceladus Technologies.
+*/
 
-//#include "K8055.h"
-//#include "K8055_C.h"
+
 #include "K8055D_new.h"
 #include <Windows.h>
 #include <iostream>
 
 using namespace std;
-
-//HINSTANCE hDLL;
 
 void test(){
 
