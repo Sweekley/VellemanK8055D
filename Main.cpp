@@ -26,12 +26,7 @@ using namespace std;
 
 void test(){
 
-	//clear all 
-	system("Pause"); 
-	cout << "Clearing All Analog Connections" << endl;
-	ClearAllAnalog();
-	cout << "Clearing All Digital Connections" << endl;
-	ClearAllDigital(); 
+
 
 	system("pause");
 	system("cls");
@@ -56,6 +51,15 @@ int main(){
 		//if card shows up then begin 
 	}
 	else cout << "No card found check again." << endl;
+	system("pause");
+
+	//clear all 
+	cout << "Clearing All Analog Connections" << endl;
+	ClearAllAnalog();
+	cout << "Clearing All Digital Connections" << endl;
+	ClearAllDigital();
+
+
 }
 
 //so now all the functions exist using K8055 debug. But we have to figure out how to get access in the main. 

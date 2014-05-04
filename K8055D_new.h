@@ -51,7 +51,13 @@ int  Channel = 8, DA1 = 0, DA2 = 0;
 
 
 int init(){
-  hDLL = LoadLibrary(L"k8055d"); //L is needed to differenciate 
+#ifdef _WIN32
+  hDLL = LoadLibrary("k8055d"); //L is needed to differenciate
+#endif 
+
+//#ifndef _WIN64
+//  hDLL = LoadLibrary(L"k8055d"); //L is needed to differenciate 
+//#endif 
   if (hDLL != NULL){
 	OpenDevice              =(t_func4) GetProcAddress(hDLL, "OpenDevice");
 	if (!OpenDevice                  ){FreeLibrary(hDLL);return -2;}
