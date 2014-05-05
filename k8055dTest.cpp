@@ -37,11 +37,9 @@ void TestButtons(){
 	bool end = false;
 	string readkbrd = " ";
 	cout << "This tests the button functions on K8055 board. \n";
-	cout << "To exit k. \n";
-
+	cout << "To exit the ESC button. \n";
 
 	while (!end){
-		
 		//reads digital inputs 
 		i = ReadAllDigital();
 
@@ -67,13 +65,23 @@ void TestButtons(){
 			cout << "Digital Input: " << i << " \n";
 			cout << "button (Inp3) pressed.\n";
 		}
-
 		//end if its true
 		if (GetAsyncKeyState(VK_ESCAPE))end = true; 
-
 	}
 	cout << "Line broke \n";  
 }
 
+void TestAllDI(){
+	//Tests DI functionality
+	ClearAllDigital();
+	while (!GetAsyncKeyState(VK_ESCAPE)){
+		int i = 0; 
+		ClearDigitalChannel(i);
+		i++;
+		if (i == 9) i = 1;
+		SetDigitalChannel(i);
+	}
+
+}
 //get key might work for this. 
 

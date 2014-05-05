@@ -60,16 +60,15 @@ int main(){
 		ClearAllDigital();
 		//if card shows up then begin
 		system("pause"); 
-		TestButtons(); 
+		//TestButtons(); 
 		cout << "Button Test completed \n"; 
+
+		system("pause");
+		TestAllDI(); 
 	}
 
 	else cout << "No card found check again." << endl;
 	system("pause");
-
-
-
-
 }
 
 //so now all the functions exist using K8055 debug. But we have to figure out how to get access in the main. 

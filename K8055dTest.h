@@ -6,4 +6,7 @@
 void TestButtons();
 //This test does not currently include debounce
 
+void TestAllDI();
+//a quick test for all digital outputs 
+
 #endif 
