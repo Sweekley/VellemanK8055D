@@ -33,7 +33,7 @@ void TestButtons(){
 	cout << "This tests the button functions on K8055 board. \n";
 	cout << "To exit k \n.";
 
-	while (true)
+	while (end == true)
 	{
 		i = ReadAllDigital();
 		cout << "Digital Input: " << i << " \n";

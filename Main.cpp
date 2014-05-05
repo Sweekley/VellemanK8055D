@@ -19,19 +19,11 @@ Description : Velleman K8055D
 
 
 #include "K8055D_new.h"
+#include "K8055dTest.h"
 #include <Windows.h>
 #include <iostream>
 
 using namespace std;
-
-void test(){
-
-
-
-	system("pause");
-	system("cls");
-	cout << "Testing Now begins" << endl; 
-}//end test 
 
 
 int main(){
@@ -39,25 +31,36 @@ int main(){
 	int report = 0, count = 0, CardAddr = 0, Responce = 3;
 	bool toggle = false;
 	long lngReturn = 0, lngValue = 0;
+
+	
+
+	//required initialization for functions to work 
 	init();
-	//Declare function
-	//This is where we try to attach the item
+
+	//checking version type 
 	Version_();
+
+	//opening the device 
 	Responce = OpenDevice(CardAddr);
-	//system("pause");
+	
+	//deciding what to do if the card is or isn't there 
 	if (Responce == CardAddr){
 		cout << "Card has been connected" << endl;
-		test();
-		//if card shows up then begin 
+		system("pause");
+
+		//clear all 
+		cout << "Clearing All Analog Connections" << endl;
+		ClearAllAnalog();
+		cout << "Clearing All Digital Connections" << endl;
+		ClearAllDigital();
+		//if card shows up then begin
+		TestButtons(); 
 	}
+
 	else cout << "No card found check again." << endl;
 	system("pause");
 
-	//clear all 
-	cout << "Clearing All Analog Connections" << endl;
-	ClearAllAnalog();
-	cout << "Clearing All Digital Connections" << endl;
-	ClearAllDigital();
+
 
 
 }
