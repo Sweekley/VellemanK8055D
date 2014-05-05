@@ -4,5 +4,6 @@
 #include "K8055D_new.h"
 
 void TestButtons();
+//This test does not currently include debounce
 
 #endif 

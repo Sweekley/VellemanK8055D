@@ -18,10 +18,12 @@ Description : Velleman K8055D
 */
 
 
-#include "K8055D_new.h"
-#include "K8055dTest.h"
+//#include "K8055D_new.h"
+//#include "K8055dTest.h"
 #include <Windows.h>
 #include <iostream>
+
+#include "k8055dTest.cpp"
 
 using namespace std;
 
@@ -33,7 +35,10 @@ int main(){
 	long lngReturn = 0, lngValue = 0;
 
 	
-
+	cout << "These following test functions were \n";
+	cout << "created by Enceladus Technologies \n";
+	cout << "And are free for use as long as recognition ";
+	cout << "is given"; 
 	//required initialization for functions to work 
 	init();
 
@@ -54,7 +59,9 @@ int main(){
 		cout << "Clearing All Digital Connections" << endl;
 		ClearAllDigital();
 		//if card shows up then begin
+		system("pause"); 
 		TestButtons(); 
+		cout << "Button Test completed \n"; 
 	}
 
 	else cout << "No card found check again." << endl;

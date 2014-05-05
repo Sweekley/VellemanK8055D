@@ -20,39 +20,60 @@ Description : Velleman K8055D
 */
 
 #include "K8055dTest.h"
-#include "K8055D_new.h"
+//#include "K8055D_new.h"
 #include <string>
+//#include <fstream>
+#include <iostream>
+//#include <istream>
+//#include <ostream>
+#include <Windows.h>
+
 
 using namespace std;
 
 void TestButtons(){
 	system("cls");
 	int	i = 0;
-	bool end = true;
+	bool end = false;
 	string readkbrd = " ";
 	cout << "This tests the button functions on K8055 board. \n";
-	cout << "To exit k \n.";
+	cout << "To exit k. \n";
 
-	while (end == true)
-	{
+
+	while (!end){
+		
+		//reads digital inputs 
 		i = ReadAllDigital();
-		cout << "Digital Input: " << i << " \n";
-		if ((i & 1) > 0) cout << "button (Inp1) pressed.\n";
-		if ((i & 2) > 0) cout << "button (Inp2) pressed.\n";
-		if ((i & 4) > 0) cout << "button (Inp3) pressed.\n";
-		if ((i & 8) > 0) cout << "button (Inp4) pressed.\n";
-		if ((i & 16) > 0) cout << "button (Inp3) pressed.\n";
-		if ((cin >> readkbrd.c_str) == "k"){
-			end = false; 
+
+		if ((i & 1) > 0) {
+			cout << "Digital Input: " << i << " \n";
+			cout << "button (Inp1) pressed.\n";
+		}
+		if ((i & 2) > 0) {
+			cout << "Digital Input: " << i << " \n";
+			cout << "button (Inp2) pressed.\n";
+		}
+		if ((i & 4) > 0){
+			cout << "Digital Input: " << i << " \n";
+			cout << "button (Inp3) pressed.\n";
 		}
 
+		if ((i & 8) > 0) {
+			cout << "Digital Input: " << i << " \n";
+			cout << "button (Inp4) pressed.\n";
+		}
+
+		if ((i & 16) > 0) {
+			cout << "Digital Input: " << i << " \n";
+			cout << "button (Inp3) pressed.\n";
+		}
+
+		//end if its true
+		if (GetAsyncKeyState(VK_ESCAPE))end = true; 
+
 	}
-
-
-
-
-	
-
-
+	cout << "Line broke \n";  
 }
+
+//get key might work for this. 
 
