@@ -34,11 +34,10 @@ int main(){
 	bool toggle = false;
 	long lngReturn = 0, lngValue = 0;
 
-	
 	cout << "These following test functions were \n";
 	cout << "created by Enceladus Technologies \n";
-	cout << "And are free for use as long as recognition ";
-	cout << "is given"; 
+	cout << "And are free for use as long as recognition \n";
+	cout << "is given. \n"; 
 	//required initialization for functions to work 
 	init();
 
@@ -54,21 +53,40 @@ int main(){
 		system("pause");
 
 		//clear all 
-		cout << "Clearing All Analog Connections" << endl;
+		cout << "Clearing All Analog Connections \n" << endl;
 		ClearAllAnalog();
-		cout << "Clearing All Digital Connections" << endl;
+		cout << "Clearing All Digital Connections \n" << endl;
 		ClearAllDigital();
 		//if card shows up then begin
 		system("pause"); 
+		cout << "Tests Inp Buttons";
 		//TestButtons(); 
 		cout << "Button Test completed \n"; 
 
 		system("pause");
-		TestAllDI(); 
+
+		//This tests Out1 through Out8
+		cout << "Tests Out Digitial Outputs";
+		//TestAllDI(50); 
+
+		//Tests PulseWith AD's 
+		cout << "Testing PWM";
+		TestPWM(1); 
 	}
 
 	else cout << "No card found check again." << endl;
-	system("pause");
+
+	system("cls"); 
+	cout << "Thank you for using Enceladus Technologies \n";
+	cout << "K8055D Test Functions \n";
+	cout << "If you have any questions email the following address. \n";
+	cout << "\nSweekley@enceladus.mygbiz.com \n\n";
+	cout << "Have a nice day. \n"; 
+
+	ClearAllAnalog();
+	ClearAllDigital();
+	CloseDevice(); 
+	//system("pause");
 }
 
 //so now all the functions exist using K8055 debug. But we have to figure out how to get access in the main. 

@@ -67,21 +67,46 @@ void TestButtons(){
 		}
 		//end if its true
 		if (GetAsyncKeyState(VK_ESCAPE))end = true; 
-	}
-	cout << "Line broke \n";  
+	}  
 }
 
-void TestAllDI(){
+void TestAllDI(int increment){
 	//Tests DI functionality
 	ClearAllDigital();
+	int i = 0; 
+	system("cls"); 
+	cout << "Testing DO lights \n"; 
+	cout << "Press the ESC button to end the test \n"; 
 	while (!GetAsyncKeyState(VK_ESCAPE)){
-		int i = 0; 
 		ClearDigitalChannel(i);
 		i++;
 		if (i == 9) i = 1;
 		SetDigitalChannel(i);
+		Sleep(increment);
+	}
+}
+
+void TestPWM(int increment){
+	ClearAllDigital();
+
+	cout << "Testing DO lights \n";
+	//255 is maximum value for a 2^8 ranged 
+	// output 
+	int i1 = 0, i2 = 255, input1 = 1, input2 = 1;
+
+	while (!GetAsyncKeyState(VK_ESCAPE)){
+		i1 += input1; 
+		i2 -= input2;
+		//switch sign on input 
+		if ((i1 == 0) || (i1 == 255)) input1 = -input1;
+		if ((i2 == 0) || (i2 == 255)) input2 = -input2;
+		OutputAnalogChannel(1, i1);
+		OutputAnalogChannel(2, i2);
+		Sleep(increment);
 	}
 
+
+
 }
-//get key might work for this. 
+
 
