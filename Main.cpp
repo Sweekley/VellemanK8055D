@@ -17,8 +17,10 @@ Description : Velleman K8055D
 * from Enceladus Technologies.
 */
 
+//Note: Do not include k8055dTest.cpp in your project 
 
-//#include "K8055D_new.h"
+
+//#include "K8055D_new.h";
 //#include "K8055dTest.h"
 #include <Windows.h>
 #include <iostream>
@@ -75,6 +77,7 @@ int main(){
 	}
 
 	else cout << "No card found check again." << endl;
+	system("pause"); 
 
 	system("cls"); 
 	cout << "Thank you for using Enceladus Technologies \n";

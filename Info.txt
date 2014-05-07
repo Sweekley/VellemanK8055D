@@ -1,0 +1,16 @@
+Location of the repo.
+https://Sweekley@bitbucket.org/enceladustechnologies/k8055d.git
+
+If you're having trouble getting this to compile, try the following:
+
+If you get lnk2005, do not include K8055dTest.cpp in the project. Just leave it in the project file.
+
+If you get the following:
+
+error C2664: 'HMODULE LoadLibraryW(LPCWSTR)' : cannot convert argument 1 from 'const char [7]' to 'LPCWSTR"
+Go to K8055D_new.h, search for LbryError which is defined at the top of the page and either uncomment or comment
+depending on what it was before hand. 
+
+
+
+
