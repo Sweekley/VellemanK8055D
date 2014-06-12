@@ -1,6 +1,8 @@
 Location of the repo.
 https://Sweekley@bitbucket.org/enceladustechnologies/k8055d.git
 
+This is provided under the GLP license. As long as credit is given, feel free to use it. 
+
 If you're having trouble getting this to compile, try the following:
 
 If you get lnk2005, do not include K8055dTest.cpp in the project. Just leave it in the project file.
