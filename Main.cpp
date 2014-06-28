@@ -62,14 +62,14 @@ int main(){
 		//if card shows up then begin
 		system("pause"); 
 		cout << "Tests Inp Buttons";
-		//TestButtons(); 
+		TestButtons(); 
 		cout << "Button Test completed \n"; 
 
 		system("pause");
 
 		//This tests Out1 through Out8
 		cout << "Tests Out Digitial Outputs";
-		//TestAllDI(50); 
+		TestAllDI(50); 
 
 		//Tests PulseWith AD's 
 		cout << "Testing PWM";

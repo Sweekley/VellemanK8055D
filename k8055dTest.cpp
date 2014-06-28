@@ -38,7 +38,7 @@ void TestButtons(){
 	string readkbrd = " ";
 	cout << "This tests the button functions on K8055 board. \n";
 	cout << "To exit the ESC button. \n";
-
+	cin.clear();
 	while (!end){
 		//reads digital inputs 
 		i = ReadAllDigital();
@@ -75,6 +75,7 @@ void TestAllDI(int increment){
 	ClearAllDigital();
 	int i = 0; 
 	system("cls"); 
+	cin.clear(); 
 	cout << "Testing DO lights \n"; 
 	cout << "Press the ESC button to end the test \n"; 
 	while (!GetAsyncKeyState(VK_ESCAPE)){
@@ -88,12 +89,12 @@ void TestAllDI(int increment){
 
 void TestPWM(int increment){
 	ClearAllDigital();
-
+	system("cls"); 
 	cout << "Testing DO lights \n";
 	//255 is maximum value for a 2^8 ranged 
 	// output 
 	int i1 = 0, i2 = 255, input1 = 1, input2 = 1;
-
+	cin.clear(); 
 	while (!GetAsyncKeyState(VK_ESCAPE)){
 		i1 += input1; 
 		i2 -= input2;
